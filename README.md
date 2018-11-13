@@ -1,4 +1,4 @@
-#memory_game
+## memory_game
 JS memory card game for kids.
 
 Simple implementation of HTML, JS and CSS concepts.
