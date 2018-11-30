@@ -1,3 +1,6 @@
+/* Color palette
+ #fe4a49 • #2ab7ca • #fed766 • #e6e6ea • #f4f4f8 */
+
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +10,7 @@
 body {
   height: 100vh;
   display: flex;
-  background: #060AB2;  
+  background: #2ab7ca;  
 }
 
 .memory-game {
@@ -41,7 +44,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
+  background: #fed766;
   backface-visibility: hidden;
 }
 
