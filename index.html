@@ -5,60 +5,76 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Memory Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">  
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">    
 </head>
 <body>
   
   <section class="memory-game">
-    <div class="memory-card" data-framework="brachiosaurus">
+    <div class="memory-card" data-species="brachiosaurus">
       <img src="img/brachiosaurus.svg" alt="brachiosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="brachiosaurus">
+    <div class="memory-card" data-species="brachiosaurus">
       <img src="img/brachiosaurus.svg" alt="brachiosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="pterosaurus">
+    <div class="memory-card" data-species="pterosaurus">
       <img src="img/pterosaurus.svg" alt="pterosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="pterosaurus">
+    <div class="memory-card" data-species="pterosaurus">
       <img src="img/pterosaurus.svg" alt="pterosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="stegosaurus">
+    <div class="memory-card" data-species="stegosaurus">
       <img src="img/stegosaurus.svg" alt="stegosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="stegosaurus">
+    <div class="memory-card" data-species="stegosaurus">
       <img src="img/stegosaurus.svg" alt="stegosaurus" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="triceratops">
+    <div class="memory-card" data-species="triceratops">
       <img src="img/triceratops.svg" alt="triceratops" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="triceratops">
+    <div class="memory-card" data-species="triceratops">
       <img src="img/triceratops.svg" alt="triceratops" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="tyrannosaurus-rex">
+    <div class="memory-card" data-species="tyrannosaurus-rex">
       <img src="img/tyrannosaurus-rex.svg" alt="tyrannosaurus-rex" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="tyrannosaurus-rex">
+    <div class="memory-card" data-species="tyrannosaurus-rex">
       <img src="img/tyrannosaurus-rex.svg" alt="tyrannosaurus-rex" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="velociraptor">
+    <div class="memory-card" data-species="velociraptor">
       <img src="img/velociraptor.svg" alt="velociraptor" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
-    <div class="memory-card" data-framework="velociraptor">
+    <div class="memory-card" data-species="velociraptor">
       <img src="img/velociraptor.svg" alt="velociraptor" class="front-face">
       <img src="img/logoUtec.svg" alt="Memory Card" class="back-face">
     </div>
   </section>
+
+  <div class="modal" id="finish">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h1>Felicidades!!</h1>
+      </div>
+      <div class="modal-body">
+        <br><p>Has terminado el juego.</p><br>        
+      </div>
+      <div class="modal-footer">
+        <p>Cierra este mensaje para comenzar de nuevo</p>
+      </div>      
+    </div>
+  </div>
 
   <!-- <section class="credits">
     <div>

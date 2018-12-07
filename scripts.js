@@ -1,9 +1,18 @@
 // collection of cards
 const cards = document.querySelectorAll('.memory-card');
 
+// variables
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+// modal window
+let modal = document.querySelector('#finish');
+let span = document.querySelector('.close');
+span.onclick = () => {
+  modal.style.display = 'none';
+  restartBoard();
+}
 
 function flipCard() {
   // return if the board is locked (prevent card flipping before cards are hidden or match)
@@ -26,12 +35,12 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  let isMatch = firstCard.dataset.species === secondCard.dataset.species;
   isMatch ?  disableCards() : unflipCards();
 }
 
 function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
+  firstCard.removeEventListener('click', flipCard);  
   secondCard.removeEventListener('click', flipCard);
   resetBoard();
 }
@@ -49,6 +58,31 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null]
+  
+  // Check if there are still cards to solve and return
+  if (Array.prototype.slice.call(cards).every(card => {
+    return Array.prototype.slice.call(card.classList).some(item => {
+      return item == 'flip';
+    });
+  }) == false) return;
+  
+  // If no more cards show the modal and restart on closing the window
+  modal.style.display = 'block';
+  window.onclick = (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      restartBoard();
+    }
+  }  
+}
+
+function restartBoard() {
+  cards.forEach(card => {
+    card.classList.remove('flip');    
+    card.addEventListener('click', flipCard);
+  });
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
 }
 
 // Randomize cards position based on order property of each element (display: flex sorting rule)
