@@ -67,7 +67,7 @@ function resetBoard() {
   }) == false) return;
   
   // If no more cards show the modal and restart on closing the window
-  modal.style.display = 'block';
+  modal.style.display = 'block';  
   window.onclick = (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';

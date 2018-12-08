@@ -18,17 +18,36 @@ body {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  padding: 0 4px;
 }
 
-.memory-card {
+.memory-card {  
   width: calc(25% - 10px);
+  max-width: calc(25% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);  
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform .5s;
+  transition: transform .5s;  
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 640px) {
+  .memory-game {
+    height: 480px;
+  }  
+}
+
+@media screen and (max-width: 480px) {
+  .memory-game {
+    height: 320px;
+  }
+  .memory-card {    
+    width: calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+  }
 }
 
 .memory-card:active {
@@ -72,7 +91,7 @@ body {
   position: relative;  
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 0;
   border: 1px solid #888;
   width: 40%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
