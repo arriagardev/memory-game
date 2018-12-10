@@ -6,8 +6,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  height: 100vh;
   display: flex;
+  height: 100vh;  
   background: #2ab7ca;  
 }
 
@@ -43,11 +43,12 @@ body {
 @media screen and (max-width: 480px) {
   .memory-game {
     height: 320px;
-  }
+  }  
   .memory-card {    
     width: calc(33.333% - 10px);
     max-width: calc(33.333% - 10px);
-  }
+    height: calc(25% - 10px);
+  }  
 }
 
 .memory-card:active {
