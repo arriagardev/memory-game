@@ -34,23 +34,6 @@ body {
   vertical-align: middle;
 }
 
-@media screen and (max-width: 640px) {
-  .memory-game {
-    height: 480px;
-  }  
-}
-
-@media screen and (max-width: 480px) {
-  .memory-game {
-    height: 320px;
-  }  
-  .memory-card {    
-    width: calc(33.333% - 10px);
-    max-width: calc(33.333% - 10px);
-    height: calc(25% - 10px);
-  }  
-}
-
 .memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
@@ -141,4 +124,30 @@ body {
   background-color: #2ab7ca;
   color: white;  
   font-size: 1rem
+}
+
+@media screen and (max-width: 640px) {
+  .memory-game {
+    height: 480px;
+  }  
+  .modal-content {
+    font-size: x-small;
+    margin: 25% auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .memory-game {
+    height: 320px;
+  }  
+  .memory-card {    
+    width: calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+    height: calc(25% - 10px);
+  }
+  .modal-content {
+    font-size: xx-small;
+    margin: 45% auto;
+    width: 70%;
+  }  
 }
