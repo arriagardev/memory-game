@@ -65,8 +65,9 @@ function resetBoard() {
       return item == 'flip';
     });
   }) == false) return;
-  
-  // If no more cards show the modal and restart on closing the window
+
+  // If no more cards congratulate!!! and restart on closing the window
+  confetti();
   modal.style.display = 'block';  
   window.onclick = (event) => {
     if (event.target === modal) {
@@ -83,15 +84,60 @@ function restartBoard() {
   });
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+  killConfetti();
+  shuffle();
 }
 
 // Randomize cards position based on order property of each element (display: flex sorting rule)
-(function shuffle() {
+function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   })
-})();
+}
 
 // add to click event the flip card func
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+// call shuffle
+shuffle();
+
+// Confetti generator
+function confetti() {
+  for(i=0; i<200; i++) {
+    // Random rotation
+    var randomRotation = Math.floor(Math.random() * 360);
+    // Random width & height between 0 and viewport
+    var randomWidth = Math.floor(Math.random() * Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
+    var randomHeight =  Math.floor(Math.random() * Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
+    
+    // Random animation-delay
+    var randomAnimationDelay = Math.floor(Math.random() * 10);
+    console.log(randomAnimationDelay)
+  
+    // Random colors
+    var colors = ['#0CD977', '#FF1C1C', '#FF93DE', '#5767ED', '#FFC61C', '#8497B0']
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  
+    // Create confetti piece
+    var confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.top = randomHeight + 'px';
+    confetti.style.left = randomWidth + 'px';
+    confetti.style.backgroundColor = randomColor;
+    confetti.style.transform = 'skew(15deg) rotate(' + randomRotation + 'deg)';
+    confetti.style.animationDelay = randomAnimationDelay + 's';
+    document.getElementById("confetti-wrapper").appendChild(confetti);
+  }
+}
+
+function killConfetti() {
+  var confetti = document.querySelectorAll('.confetti');
+  confetti.forEach(item => {
+    // Random animation-delay
+    var randomAnimationDelay = Math.floor(Math.random() * 10);
+    console.log(randomAnimationDelay)
+    // Remove confetti piece
+    item.remove();
+  })  
+}
